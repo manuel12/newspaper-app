@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 
     # Local
     'users.apps.UsersConfig',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',
+    'articles.apps.ArticlesConfig'
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
@@ -133,4 +134,18 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+DEFAULT_FROM_EMAIL = 'manuelpinedac@hotmail.com'
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+
+EMAIL_HOST_USER = 'apikey'
+
+EMAIL_HOST_PASSWORD = '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'
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
